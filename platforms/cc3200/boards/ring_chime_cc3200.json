@@ -1,0 +1,8 @@
+{
+  "name": "Ring Chime (CC3200 / TLV320DAC3100)",
+  "vendor": "Community",
+  "url": "https://www.ti.com/product/CC3200",
+  "build": {"cpu": "cortex-m4", "f_cpu": "80000000L", "mcu": "cc3200"},
+  "upload": {"maximum_ram_size": 262144, "maximum_size": 131072},
+  "frameworks": []
+}

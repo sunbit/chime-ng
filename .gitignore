@@ -1,0 +1,17 @@
+.private-archive/
+.pio/
+.pio-venv/
+.venv/
+build/
+dist/
+backups/
+locales/local-*/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+*.log
+*.readback
+*.partial
+*.resume.json
+setup-password.txt

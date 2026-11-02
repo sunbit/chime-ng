@@ -1,0 +1,6 @@
+# Preserve upstream TI bytes and hashes, including original line endings.
+vendor/ti/** -text -whitespace linguist-vendored=true
+docs/images/*.svg linguist-generated=true
+*.png binary
+*.jpg binary
+*.wav binary

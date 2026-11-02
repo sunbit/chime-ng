@@ -1,0 +1,15 @@
+{
+  "name": "chime-cc3200",
+  "title": "Chime CC3200 bare-metal",
+  "description": "CC3200 C firmware with TI SimpleLink, a relocating loader and local OTA",
+  "version": "0.2.1",
+  "license": "MIT",
+  "engines": {"platformio": "^6.1.19"},
+  "packages": {
+    "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "owner": "platformio",
+      "version": "1.120301.0"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# Needed for first installation, recovery and their offline tests.
+setuptools==80.9.0
+pyserial==3.5
+cc3200tool @ git+https://github.com/ALLTERCO/cc3200tool.git@6a066d836e8194dff766f7c76035b3c944531d86

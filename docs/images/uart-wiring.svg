@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1220" viewBox="0 0 1600 1220" fill="#172b43" role="img" aria-labelledby="title desc">
+  <title id="title">Chime NG initial flashing connections</title>
+  <desc id="desc">An external regulated 5 volt supply powers the Chime board. Supply negative, USB UART ground and board ground are connected together. A generic USB UART adapter uses 3.3 volt logic: TXD connects to device RX at CC3200 pin 57; RXD connects to device TX at pin 55. Its verified 3.3 volt output connects through a 4.7 kilohm resistor and a removable lead to SOP2 at pin 21. A normally open momentary button connects nRESET at pin 32 to ground when pressed. The adapter VCC or 5 volt pin is left disconnected. Disconnect SOP2 before normal boot. Pin positions vary; use the adapter labels and the board contact map.</desc>
+  <defs>
+    <linearGradient id="supply" x2="0" y2="1">
+      <stop stop-color="#e8edf3"/>
+      <stop offset="1" stop-color="#cbd4df"/>
+    </linearGradient>
+    <linearGradient id="metal" x2="0" y2="1">
+      <stop stop-color="#f4f6f9"/>
+      <stop offset=".45" stop-color="#b2becd"/>
+      <stop offset=".6" stop-color="#e2e8f0"/>
+      <stop offset="1" stop-color="#9daaba"/>
+    </linearGradient>
+    <linearGradient id="pcb" x2="1" y2="1">
+      <stop stop-color="#1c6c60"/>
+      <stop offset="1" stop-color="#125044"/>
+    </linearGradient>
+    <linearGradient id="resistor" x2="0" y2="1">
+      <stop stop-color="#f9e8c0"/>
+      <stop offset=".5" stop-color="#dfc38e"/>
+      <stop offset="1" stop-color="#b99c6b"/>
+    </linearGradient>
+    <linearGradient id="button" x2="0" y2="1">
+      <stop stop-color="#5d6c80"/>
+      <stop offset="1" stop-color="#263548"/>
+    </linearGradient>
+    <marker id="tx-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 10 5 0 10Z" fill="#168353"/>
+    </marker>
+    <marker id="rx-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 10 5 0 10Z" fill="#2563c7"/>
+    </marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+      .heading{font-size:30px;font-weight:700}
+      .label{font-size:27px;font-weight:650}
+      .small{font-size:23px;fill:#465a72}
+      .wire{fill:none;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+      .red{stroke:#db3c3c}
+      .ground{stroke:#263548}
+      .orange{stroke:#c67a10}
+      .green{stroke:#168353}
+      .blue{stroke:#2563c7}
+      .purple{stroke:#8250ba}
+      .pad{fill:#f7df91;stroke:#9b7834;stroke-width:2}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1220" fill="#f7f9fc"/>
+  <text x="60" y="69" font-size="43" font-weight="750">Initial flashing: bench wiring</text>
+  <text x="60" y="113" font-size="27" fill="#465a72">External 5.0 V board power · 3.3 V UART signals · manual reset</text>
+
+  <!-- External regulated supply. -->
+  <text x="78" y="175" class="heading">External power supply</text>
+  <rect x="70" y="195" width="460" height="205" rx="18" fill="url(#supply)" stroke="#9caabd" stroke-width="2"/>
+  <rect x="91" y="217" width="230" height="104" rx="10" fill="#253c43"/>
+  <rect x="101" y="227" width="210" height="84" rx="5" fill="#daf1d4"/>
+  <text x="119" y="283" font-size="43" font-weight="650" fill="#1d462f">5.00 V</text>
+  <text x="98" y="364" class="small">Regulated DC · 1 A rated</text>
+  <path d="M352 239h133M352 254h133M352 269h133" stroke="#97a5b6" stroke-width="5" stroke-linecap="round"/>
+  <text x="365" y="311" text-anchor="middle" font-size="27" font-weight="700">−</text>
+  <text x="455" y="311" text-anchor="middle" font-size="27" font-weight="700" fill="#bd3030">+</text>
+  <circle cx="365" cy="342" r="23" fill="#263548" stroke="#152236" stroke-width="3"/>
+  <circle cx="455" cy="342" r="23" fill="#dc4949" stroke="#a02b2b" stroke-width="3"/>
+  <circle cx="365" cy="342" r="9" fill="#aab7c7"/>
+  <circle cx="455" cy="342" r="9" fill="#e2c57e"/>
+
+  <!-- Generic adapter illustration: follow labels, not this example's pin order. -->
+  <text x="78" y="468" class="heading">USB–UART adapter</text>
+  <rect x="110" y="492" width="402" height="416" rx="18" fill="url(#pcb)" stroke="#0b4039" stroke-width="3"/>
+  <circle cx="134" cy="517" r="10" fill="#c3d9c2" stroke="#dfce87" stroke-width="4"/>
+  <circle cx="134" cy="882" r="10" fill="#c3d9c2" stroke="#dfce87" stroke-width="4"/>
+  <path d="M153 560h88v39m-88 218h70v-57m150-182h21v170h-20m-184-198v-35h166v35" fill="none" stroke="#3f8c76" stroke-width="5"/>
+  <rect x="79" y="634" width="103" height="121" rx="9" fill="url(#metal)" stroke="#8795a7" stroke-width="3"/>
+  <rect x="78" y="649" width="26" height="91" rx="3" fill="#263548"/>
+  <path d="M122 641v106m26-106v106" stroke="#8e9aaa" stroke-width="3"/>
+  <text x="159" y="801" font-size="24" fill="#e3f1e8" text-anchor="middle">USB</text>
+  <rect x="226" y="612" width="138" height="138" rx="7" fill="#24303c" stroke="#10212d" stroke-width="3"/>
+  <path d="M241 596v16m23-16v16m23-16v16m23-16v16m23-16v16m23-16v16M241 750v16m23-16v16m23-16v16m23-16v16m23-16v16m23-16v16M210 630h16m-16 24h16m-16 24h16m-16 24h16m-16 24h16M364 630h16m-16 24h16m-16 24h16m-16 24h16m-16 24h16" stroke="#b9c2ce" stroke-width="7"/>
+  <text x="295" y="674" text-anchor="middle" font-size="25" font-weight="650" fill="#e6edf4">USB</text>
+  <text x="295" y="709" text-anchor="middle" font-size="25" fill="#e6edf4">UART</text>
+  <rect x="249" y="805" width="93" height="33" rx="8" fill="url(#metal)" stroke="#9ba8b7" stroke-width="2"/>
+  <circle cx="201" cy="555" r="7" fill="#ceef8b"/>
+  <text x="218" y="563" font-size="20" fill="#d2e9dd">PWR</text>
+  <rect x="485" y="510" width="28" height="381" rx="5" fill="#24303c"/>
+  <path d="M502 530h28M502 620h28M502 710h28M502 800h28M502 870h28" stroke="#d5b25c" stroke-width="10"/>
+  <g font-size="26" font-weight="650" text-anchor="end">
+    <text x="472" y="539" fill="#ffffff">3V3 OUT</text>
+    <text x="472" y="629" fill="#ffffff">TXD</text>
+    <text x="472" y="719" fill="#ffffff">RXD</text>
+    <text x="472" y="809" fill="#ffffff">VCC / 5V</text>
+    <text x="472" y="879" fill="#ffffff">GND</text>
+  </g>
+  <text x="80" y="949" class="small">Generic example · verify pin labels</text>
+
+  <!-- Device connections, arranged by signal rather than physical pad location. -->
+  <rect x="1080" y="185" width="460" height="735" rx="18" fill="#eaf0f6" stroke="#b6c4d4" stroke-width="2"/>
+  <text x="1110" y="236" class="heading">Chime logic board</text>
+  <path d="M1110 365h400" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="1269" y="397" width="136" height="83" rx="5" fill="#34485d"/>
+  <path d="M1280 384v13m23-13v13m23-13v13m23-13v13m23-13v13m23-13v13M1280 480v13m23-13v13m23-13v13m23-13v13m23-13v13m23-13v13M1256 410h13m-13 22h13m-13 22h13M1405 410h13m-13 22h13m-13 22h13" stroke="#9facbc" stroke-width="6"/>
+  <text x="1337" y="449" text-anchor="middle" font-size="26" fill="#ffffff">CC3200</text>
+  <text x="1110" y="311" class="label">+5VDC input</text>
+  <text x="1110" y="344" class="small">External supply positive</text>
+  <text x="1110" y="540" class="label">SOP2 · pin 21</text>
+  <text x="1110" y="574" class="small">H3 area</text>
+  <text x="1110" y="630" class="label">RX · pin 57</text>
+  <text x="1110" y="664" class="small">J2 top row · hole 4</text>
+  <text x="1110" y="720" class="label">TX · pin 55</text>
+  <text x="1110" y="754" class="small">J2 top row · hole 5</text>
+  <text x="1110" y="810" class="label">nRESET · pin 32</text>
+  <text x="1320" y="889" text-anchor="middle" class="label">GND</text>
+  <g class="pad">
+    <circle cx="1080" cy="300" r="9"/>
+    <circle cx="1080" cy="530" r="9"/>
+    <circle cx="1080" cy="620" r="9"/>
+    <circle cx="1080" cy="710" r="9"/>
+    <circle cx="1080" cy="800" r="9"/>
+    <circle cx="1320" cy="920" r="9"/>
+  </g>
+
+  <!-- Power, common ground, UART and boot-mode wiring. -->
+  <path d="M455 342H550V300H1080" class="wire red"/>
+  <text x="796" y="279" text-anchor="middle" class="label" fill="#b72d2d">+5.0 V DC</text>
+  <path d="M365 342V425H30V1010H1320V920" class="wire ground"/>
+  <path d="M530 870H580V1010" class="wire ground"/>
+  <path d="M530 530H1080" class="wire orange"/>
+  <path d="M530 620H1060" class="wire green" marker-end="url(#tx-arrow)"/>
+  <path d="M1060 620H1080" class="wire green"/>
+  <path d="M1080 710H550" class="wire blue" marker-end="url(#rx-arrow)"/>
+  <path d="M550 710H530" class="wire blue"/>
+  <text x="797" y="600" text-anchor="middle" font-size="25" fill="#126b44">Adapter TX → device RX</text>
+  <text x="797" y="690" text-anchor="middle" font-size="25" fill="#2054a6">Device TX → adapter RX</text>
+
+  <!-- 4.7 kOhm: yellow, violet, red, gold. -->
+  <text x="785" y="477" text-anchor="middle" class="label">4.7 kΩ</text>
+  <rect x="718" y="509" width="135" height="42" rx="13" fill="url(#resistor)" stroke="#a68c60" stroke-width="2"/>
+  <path d="M738 511v38" stroke="#e5bc15" stroke-width="11"/>
+  <path d="M762 509v42" stroke="#8048a0" stroke-width="11"/>
+  <path d="M786 509v42" stroke="#c83d38" stroke-width="11"/>
+  <path d="M831 513v34" stroke="#b18b32" stroke-width="8"/>
+  <rect x="917" y="515" width="23" height="30" rx="3" fill="#34485d"/>
+  <rect x="943" y="515" width="23" height="30" rx="3" fill="#34485d"/>
+  <path d="M940 525h3m-3 10h3" stroke="#caa555" stroke-width="3"/>
+  <text x="942" y="434" text-anchor="middle" class="small">Removable</text>
+  <text x="942" y="462" text-anchor="middle" class="small">SOP2 lead</text>
+  <path d="M942 475v28" stroke="#6f8196" stroke-width="2"/>
+
+  <!-- Adapter power is intentionally left open. -->
+  <path d="M530 800H605" stroke="#9daaba" stroke-width="5" stroke-linecap="round" stroke-dasharray="8 8"/>
+  <path d="M598 788l24 24m0-24-24 24" stroke="#b72d2d" stroke-width="5" stroke-linecap="round"/>
+  <text x="645" y="791" font-size="22" font-weight="650" fill="#a82d2d">Leave disconnected</text>
+
+  <!-- Two-terminal normally open momentary pushbutton. -->
+  <path d="M1080 800H1005V868H915" class="wire purple"/>
+  <path d="M735 868H650V1010" class="wire ground"/>
+  <path d="M735 868h37m106 0h37" stroke="#a5b2c2" stroke-width="10" stroke-linecap="round"/>
+  <rect x="767" y="834" width="115" height="67" rx="9" fill="url(#metal)" stroke="#8d9bad" stroke-width="2"/>
+  <rect x="779" y="822" width="91" height="67" rx="10" fill="url(#button)" stroke="#22364b" stroke-width="2"/>
+  <rect x="794" y="809" width="61" height="62" rx="11" fill="#d64648" stroke="#a52f34" stroke-width="3"/>
+  <path d="M807 820h35" stroke="#f47879" stroke-width="4" stroke-linecap="round"/>
+  <text x="824" y="759" text-anchor="middle" class="label">RESET button</text>
+  <text x="824" y="931" text-anchor="middle" class="small">Normally open · press ~0.5 s</text>
+
+  <!-- Junction dots indicate the shared ground connection. -->
+  <circle cx="580" cy="1010" r="9" fill="#263548"/>
+  <circle cx="650" cy="1010" r="9" fill="#263548"/>
+  <path d="M1100 1010v13m-19 0h38m-31 10h24m-16 10h8" fill="none" stroke="#263548" stroke-width="4"/>
+  <text x="790" y="1050" text-anchor="middle" class="label">Common GND</text>
+
+  <rect x="60" y="1091" width="1480" height="100" rx="13" fill="#e8eef5"/>
+  <path d="M552 1108v66m493-66v66" stroke="#c9d4e2" stroke-width="2"/>
+  <text x="86" y="1126" font-size="25" font-weight="700">Board: external 5.0 V only</text>
+  <text x="86" y="1162" font-size="22" fill="#465a72">Disconnect the internal power supply.</text>
+  <text x="578" y="1126" font-size="25" font-weight="700">Signals: verified 3.3 V only</text>
+  <text x="578" y="1162" font-size="22" fill="#465a72">Check adapter TXD and 3V3 voltages.</text>
+  <text x="1072" y="1126" font-size="25" font-weight="700">Normal boot</text>
+  <text x="1072" y="1162" font-size="22" fill="#465a72">Disconnect SOP2, then reset.</text>
+</svg>
